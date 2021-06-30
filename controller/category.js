@@ -49,7 +49,7 @@ exports.remove = (req, res) => {
                 error: "Unauthorized"
             })
         }
-        res.json({message: "Cat. deleted successfully"})
+        res.json( {message: "Cat. deleted successfully"})
     })
 }
 

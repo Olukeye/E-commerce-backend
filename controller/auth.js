@@ -4,7 +4,7 @@
 
 //  signup to App =============================>
  exports.signup = (req, res) => {
-   const user   = new User(req.body)
+   const user = new User(req.body)
    user.save((err, user) => {
      if(err) {
        return res.status(400).send(
@@ -21,6 +21,7 @@
  exports.signin = (req, res) => {
     //saerch for user with match email and password
     const { email , password } = req.body;
+    
     User.findOne({ email }, (err, user) => {
       if (err || !user ) {
         return res.status(400).json({
@@ -42,14 +43,6 @@
       return res.json({token, user: { _id, name, email, role }});
     });
  };
-
-// Signout of the App ===============================>
-exports.signout = (req, res) => {
-   res.clearCookie('t')
-   res.json({
-     message: "Signout successfully!"
-   })
-}
  
 // 
  exports.requireSignin = expressJwt({
@@ -77,4 +70,12 @@ exports.isAdmin = (req, res, next) => {
     })
   }
   next()
+}
+
+// Signout of the App ===============================>
+exports.signout = (req, res) => {
+  res.clearCookie('t')
+  res.json({
+    message: "Signout successfully!"
+  })
 }

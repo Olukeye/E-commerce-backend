@@ -1,18 +1,16 @@
-const express    = require('express');
-const router  = express.Router();
+const express = require('express')
+const router  = new express.Router()
 
 
-const {requireSignin, isAuth } = require('../controller/auth');
-const {userById } = require('../controller/get_user_byId');
-const {generateToken } = require('../controller/braintree');
+const { userById } = require('../controller/get_user_byId')
+const { requireSignin, isAuth } = require('../controller/auth');
+const { generateToken } = require('../controller/braintree');
 
 
 
-router.get('/braintree/getToken/:userId', requireSignin, isAuth, generateToken );
-
-
+router.get("/braintree/getToken/:userId", requireSignin, isAuth, generateToken);
 
 router.param("userId", userById);
 
-module.exports = router;
 
+module.exports = router;
