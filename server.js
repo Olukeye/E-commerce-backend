@@ -7,8 +7,7 @@ const expressValidator = require('express-validator')
 const session  = require('express-session');
 const cors = require('cors')
 const app        = express()
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 // Config DB
 const { PORT, MONGO_URI} = process.env;
@@ -56,7 +55,7 @@ app.use('/api', braintreeRouter)
 
 
 
-app.listen(process.env.PORT, () =>{
+app.listen(process.env.PORT, () => {
     console.log('server is running on port  ' + PORT)
 })
  
