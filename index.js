@@ -35,7 +35,6 @@ const categoryRouter   = require('./routes/category');
 const productRouter    = require('./routes/product');
 const braintreeRouter  = require('./routes/braintree');
 
-
 // bodyParser
 app.use(express.urlencoded({extended: false}));
 
