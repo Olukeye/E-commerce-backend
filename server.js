@@ -14,6 +14,10 @@ require('dotenv').config();
 // Config DB
 const { PORT, MONGO_URI} = process.env;
 
+app.get('/', (req, res) => {
+    res.send("The E-commerce API")
+});
+
 // Connect to Database
 mongoose.connect(MONGO_URI, { 
     useNewUrlParser: true,
