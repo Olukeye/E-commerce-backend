@@ -35,7 +35,6 @@ const authRouter       = require('./routes/auth') ;
 const IdRouter         = require('./routes/get_user_byId');
 const categoryRouter   = require('./routes/category');
 const productRouter    = require('./routes/product');
-const braintreeRouter  = require('./routes/braintree');
 
 // bodyParser
 app.use(express.urlencoded({extended: false}));
@@ -52,7 +51,6 @@ app.use('/api', authRouter)
 app.use('/api', IdRouter)
 app.use('/api', categoryRouter)
 app.use('/api', productRouter)
-app.use('/api', braintreeRouter)
 
 
 
