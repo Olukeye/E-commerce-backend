@@ -7,6 +7,8 @@ const expressValidator = require('express-validator')
 const session  = require('express-session');
 const cors = require('cors')
 const app        = express()
+
+
 require('dotenv').config();
 
 // Config DB
