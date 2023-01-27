@@ -5,7 +5,6 @@ const  formidable = require('formidable')
 const { exec } = require('child_process')
 
 
-
 exports.productById = (req, res, next, id) => {
     Product.findById(id)
     .populate('category')
@@ -40,8 +39,8 @@ exports.create = (req, res) => {
 
         let product = new Product(fields)
 
+        // upload photo
         if(files.photo) {
-
           if(files.photo.size > 1000000) {
               return res.status(400).json({
                   error: 'image should not be more than 1mb'

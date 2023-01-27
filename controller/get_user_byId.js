@@ -32,9 +32,24 @@ exports.read = (req, res) => {
 //             user.hashed_password = undefined
 //             user.salt = undefined
 //             res.json(user)
-//         }
+//         } 
 //     );
 // };
+
+// exports.update = (req, res) => {
+//     const {username, name, password, address, phone, birthday, vehicle_name, avatar } = req.body;
+//     User.findOneAndUpdate({ _id: req.profile._id},{$set:req.body},{new: true},(err, user)=> {
+//         if(req.body.password) {
+//             user.hashed_password = undefined
+//             user.salt = undefined
+//         } else if (err) {
+//             return res.status(400).json({
+//             error: "Sorry, you are not the user of this account"
+//          })
+//         }
+//         res.json(user)
+//     })
+// }
 
 exports.update = (req, res) => {
     // console.log('UPDATE USER - req.user', req.user, 'UPDATE DATA', req.body);

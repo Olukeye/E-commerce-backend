@@ -31,7 +31,7 @@ mongoose.connect(MONGO_URI, {
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use( expressValidator());
+app.use(expressValidator());
 app.use( cors());
 
 //  Routes

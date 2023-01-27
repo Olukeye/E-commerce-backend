@@ -44,12 +44,8 @@
     });
  };
  
-// 
- exports.requireSignin = expressJwt({
-   secret:"" + process.env.JWT_SECRET,
-   userProperty: 'auth',
-   algorithms:['HS256']
-})
+
+ 
 
 // Authentication route for a regular user 
 exports.isAuth = (req, res, next) => {
@@ -79,3 +75,10 @@ exports.signout = (req, res) => {
     message: "Signout successfully!"
   })
 }
+
+// proected route for only loged in user
+exports.requireSignin = expressJwt({
+  secret:"" + process.env.JWT_SECRET,
+  userProperty: 'auth',
+  algorithms:['HS256']
+})

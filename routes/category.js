@@ -9,14 +9,10 @@ const {
         remove, 
         list
       } = require('../controller/category')
-      
-      const {userById} = require('../controller/get_user_byId')
+    
+    const {userById} = require('../controller/get_user_byId')
 
-      const {
-          requireSignin,
-          isAuth,
-          isAdmin 
-          } = require('../controller/auth')
+    const { requireSignin, isAuth, isAdmin } = require('../controller/auth')
 
 router.post('/category/create/:userId', requireSignin, isAuth, isAdmin, create);
 router.get('/category/:categoryId', read)
