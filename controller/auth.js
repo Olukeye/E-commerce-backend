@@ -8,9 +8,10 @@
    user.save((err, user) => {
      if(err) {
        return res.status(400).send(
-         "user already exist!"
+         "not processed"
        );
      }
+     console.log(user)
      user.salt = undefined
      user.hashed_password = undefined;
      res.json({user});
@@ -25,7 +26,7 @@
     User.findOne({ email }, (err, user) => {
       if (err || !user ) {
         return res.status(400).json({
-          err: "User does not exist. Please sign in !"
+          err: "User does not exist. Please signup !"
         });
       }
  

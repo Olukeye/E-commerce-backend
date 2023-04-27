@@ -57,8 +57,6 @@ app.use('/api', categoryRouter)
 app.use('/api', productRouter)
 
 
-
 app.listen(process.env.PORT, () => {
     console.log('server is running on port  ' + PORT)
 })
- 
