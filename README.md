@@ -33,7 +33,44 @@ This project powers core e-commerce features such as authentication, product man
 
 ## ⚙️ Getting Started
 
-### 1️⃣ Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/Olukeye/E-commerce-backend.git
 cd E-commerce-backend
+
+npm install
+# or
+yarn install
+---
+
+### Environment variable keys
+```bash
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+EMAIL_HOST=smtp.yourmail.com
+EMAIL_PORT=587
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password
+
+
+npm run dev
+
+
+## Project structure 
+### Clone the repository
+E-commerce-backend/
+│
+├── controller/         # Route controllers
+├── model/              # Mongoose models (User, Product, Order, etc.)
+├── routes/             # API routes
+├── validator/          # Request validators
+├── mailer.js           # Email utility
+├── server.js           # Entry point
+├── Procfile            # Deployment config
+├── package.json
+├── .env.example        # Example environment variables
+└── README.md
+
+
+
