@@ -55,9 +55,11 @@ EMAIL_PASS=your_email_password
 
 
 npm run dev
+```
 
+## Project structure
+```bash
 
-## Project structure 
 ### Clone the repository
 E-commerce-backend/
 │
